@@ -1,14 +1,25 @@
-let slideIndex = 0;
-showSlides();
+var imgs = document.querySelectorAll('.slider img');
+var dots = document.querySelectorAll('.dot');
+var currentImg = 0; // index of the first image 
+const interval = 3000; // duration(speed) of the slide
 
-function showSlides() {
-let i;
-let slides = document.getElementsByClassName("mySlides");
-for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+function changeSlide(n) {
+    for (var i = 0; i < imgs.length; i++) { // reset
+      imgs[i].style.opacity = 0;
+      dots[i].className = dots[i].className.replace(' active', '');
+    }
+  
+    var timer = setInterval(changeSlide, interval);
+
+currentImg = (currentImg + 1) % imgs.length; // update the index number
+
+if (n != undefined) {
+    clearInterval(timer);
+    timer = setInterval(changeSlide, interval);
+    currentImg = n;
 }
-slideIndex++;
-if (slideIndex > slides.length) {slideIndex = 1}
-slides[slideIndex-1].style.display = "block";
-  setTimeout(showSlides, 2000); // Change image every 2 seconds
-} 
+  }
+
+
+
+

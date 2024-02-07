@@ -127,7 +127,7 @@ main {
 }
 
 .location-image {
-    width: 150px;
+    width: 500px;
     height: auto;
 }
 
@@ -146,6 +146,42 @@ main {
     width: 30px;
     height: auto;
     margin-right: 5px;
+}
+
+#buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px;
+    flex-grow: 1;
+}
+
+#top-buttons, #bottom-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: flex-end; /* Align buttons to the right within the container */
+}
+
+button {
+    background-color: green;
+    border: none;
+    color: black;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    width: 120px;
+    height: 60px;
+    border-radius: 20px;
+}
+
+.button-logo {
+    width: 100px; /* Adjust the width of the logo */
+    height: auto;
+    margin-right: 10px; /* Add space between the logo and the button text */
 }
 
 footer {

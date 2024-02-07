@@ -1,21 +1,3 @@
-* {box-sizing:border-box}
-body, h1, h2, h3, p, ul, li {
-    margin: 0;
-    padding: 0;
-}
-
-html, body {
-    height: 100%;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: black;
-}
 
 header {
     text-align: left;
@@ -25,145 +7,145 @@ header {
     box-sizing: border-box;
 }
 
+.logo {
+    max-width: 130px; /* Ensure the logo does not exceed its container */
+    height: auto; /* Maintain the aspect ratio */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Ensure the body takes up the full height of the viewport */
+}
+
 main {
     flex: 1; /* Allow the main content to fill the remaining space */
     display: flex;
-    flex-direction: column;
-    align-items: flex-end; /* Align the content to the right */
+    justify-content: center; /* Center the content horizontally */
+    align-items: center;  /* Align the content to the right */
 }
 
+.container {
+    width: 50%; /* Adjust as needed */
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    width: 30px; /* Adjust arrow width */
+    height: 30px; /* Adjust arrow height */
+    background-color: rgba(0, 0, 0, 0.5); /* Arrow background color */
+    cursor: pointer;
+    z-index: 2; /* Ensure arrows appear above images */
+}
+
+.left-arrow {
+    left: 10px; /* Adjust left arrow position */
+    border-top-left-radius: 5px; /* Adjust arrow shape */
+    border-bottom-left-radius: 5px; /* Adjust arrow shape */
+}
+
+.right-arrow {
+    right: 10px; /* Adjust right arrow position */
+    border-top-right-radius: 5px; /* Adjust arrow shape */
+    border-bottom-right-radius: 5px; /* Adjust arrow shape */
+}
+
+.arrow:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+}
+
+.left-arrow:before {
+    transform: translate(-50%, -50%) rotate(-235deg); /* Rotate left arrow */
+}
+
+.right-arrow:before {
+    transform: translate(-50%, -50%) rotate(-45deg); /* Rotate right arrow */
+}
+
+
 .slider {
-  width: 100%;
-  height: 510px;
-  position: relative;
+    width: 100%;
+    height: 510px;
+    position: relative;
+    overflow: hidden;
 }
 
 .slider img {
-    width: 100%;
-    height: 500px;
+    max-width: 100%;
+    max-height: auto; /* Adjusted to fit within the container */
     position: absolute;
     top: 0;
     left: 0;
 }
 
 .slider img:first-child {
-  z-index: 1;
+    z-index: 1;
 }
 
 .slider img:nth-child(2) {
-  z-index: 0;
+    z-index: 0;
 }
 
 .navigation-button {
-    text-align: center;
-    position: relative;
-  }
-  
-  .dot {
+    position: absolute;
+    bottom: 90px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1; 
+}
+
+.dot {
     cursor: pointer;
-    height: 15px;
-    width: 15px;
+    height: 10px; /* Adjust the size of the dots */
+    width: 10px; /* Adjust the size of the dots */
     margin: 0 2px;
     background-color: #bbb;
     border-radius: 50%;
     display: inline-block;
-  }
-  
-  .active,
-  .dot:hover {
+}
+
+.active,
+.dot:hover {
     background-color: #717171;
-  }
-
-#buttons-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin: 10px;
-    flex-grow: 1;
 }
 
-#top-buttons, #bottom-buttons {
+.location-card {
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
     display: flex;
-    flex-direction: row;
-    gap: 10px;
-    justify-content: flex-end; /* Align buttons to the right within the container */
-}
-
-.logo {
-    max-width: 130px; /* Ensure the logo does not exceed its container */
-    height: auto; /* Maintain the aspect ratio */
-}
-
-.container {
-    display: flex;
-    justify-content: center;
     align-items: center;
 }
 
-.pictures {
-    max-width: 50%; /* Ensure the logo does not exceed its container */
+.location-image {
+    width: 150px;
     height: auto;
-    align-items: center;
 }
 
-h3{
-    color: white;
-}
-
-button {
-    background-color: white;
-    border: none;
-    color: black;
+.location-info {
     padding: 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-    width: 120px;
-    height: 60px;
 }
 
-.location {
-    max-width: 500px;
-    float: left;    
-    margin: 0 15px 0 0;
+.address,
+.phone {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
 }
 
-.button-logo {
-    width: 100px; /* Adjust the width of the logo */
+.icon {
+    width: 30px;
     height: auto;
-    margin-right: 10px; /* Add space between the logo and the button text */
-}
-
-.door-dash {
-    background-color: #ff5f00; /* DoorDash color */
-    color: white;
-}
-
-.grubhub {
-    background-color: #00bfff; /* Grubhub color */
-    color: white;
-}
-
-.uber-eats {
-    background-color: #2ecc71; /* UberEats color */
-    color: white;
-}
-
-.pickup {
-    background-color: #ffcc29; /* Pickup color */
-    color: white;
-}
-
-.postmates {
-    background-color: #ed1c24; /* Postmates color */
-    color: white;
-}
-
-.seamless {
-    background-color: #00a651; /* Seamless color */
-    color: white;
+    margin-right: 5px;
 }
 
 footer {

@@ -1,7 +1,7 @@
 
 header {
     text-align: left;
-    background-color: green;
+    background-color: rgb(84, 205, 84);
     padding: 20px;
     width: 100%;
     box-sizing: border-box;
@@ -16,6 +16,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh; /* Ensure the body takes up the full height of the viewport */
+    background-color: wheat;
 }
 
 main {
@@ -26,7 +27,9 @@ main {
 }
 
 .container {
-    width: 50%; /* Adjust as needed */
+    width: 60%;
+    height: auto; /* Adjust as needed */
+    justify-content: center;
 }
 
 .arrow {
@@ -96,7 +99,7 @@ main {
 
 .navigation-button {
     position: absolute;
-    bottom: 90px; /* Adjust as needed */
+    bottom: 150px; /* Adjust as needed */
     left: 50%;
     transform: translateX(-50%);
     z-index: 1; 
@@ -164,7 +167,7 @@ main {
 }
 
 button {
-    background-color: green;
+    background-color: wheat;
     border: none;
     color: black;
     padding: 10px;
@@ -184,11 +187,17 @@ button {
     margin-right: 10px; /* Add space between the logo and the button text */
 }
 
+.button-logo {
+    width: 100px; /* Adjust the width of the logo */
+    height: auto;
+    margin-right: 10px; /* Add space between the logo and the button text */
+}
+
 footer {
     text-align: center;
-    background-color: green;
+    background-color: rgb(84, 205, 84);
     color: white;
-    padding: 20px;
+    padding: 50px;
     width: 100%;
     box-sizing: border-box;
     margin-top: auto; /* Push the footer to the bottom */
